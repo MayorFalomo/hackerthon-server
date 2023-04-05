@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose
-  .connect(process.env.MONGO_URL, {
+  .connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -25,5 +25,5 @@ app.use("/api/users", userRoutes);
 
 app.listen("5000", () => {
   console.log("Server is running on port 5000");
-  console.log(process.env.MONGO_URL);
+  console.log(process.env.MONGODB_URL);
 });
